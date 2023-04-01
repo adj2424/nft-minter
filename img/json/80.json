@@ -1,0 +1,31 @@
+{
+  "name": "smiley face #80",
+  "description": "starter smiley face",
+  "image": "ipfs://NewUriToReplace/80.png",
+  "dna": "f92e0b5e547a9aa6bc9539dcaabdc0243aee9d98",
+  "edition": 80,
+  "date": 1680387717809,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "bg1 "
+    },
+    {
+      "trait_type": "face",
+      "value": "face6"
+    },
+    {
+      "trait_type": "left_eye",
+      "value": "left4"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mouth4"
+    },
+    {
+      "trait_type": "right_eye",
+      "value": "right4"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}
