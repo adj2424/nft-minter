@@ -51,4 +51,8 @@ contract SmileyFace is ERC721, ERC721URIStorage, Ownable {
     ) public view override(ERC721, ERC721URIStorage) returns (string memory) {
         return super.tokenURI(tokenId);
     }
+
+    function getMintedCount() public view returns (uint256) {
+        return _tokenIdCounter.current() - 1;
+    }
 }
