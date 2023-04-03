@@ -1,18 +1,18 @@
 {
     "name": "smiley face #86",
     "description": "starter smiley face",
-    "image": "ipfs://bafybeieourdi7wzsc6g357ekbxe3fhw3mfg4uzgjzidwchxv2e54vi5luq/86.png",
-    "dna": "e2e55314a80e063b1195e43a5dd6cc072f31debd",
+    "image": "ipfs://bafybeiez5abohaxwpnzgdfub5keayojbfpx7wwr7nsaqef7aqe6pilf63y/86.png",
+    "dna": "8d8d7712a9176509bdc0039744c6c6a1984538d6",
     "edition": 86,
-    "date": 1680387718746,
+    "date": 1680497961544,
     "attributes": [
         {
             "trait_type": "background",
-            "value": "bg1 "
+            "value": "bg2 "
         },
         {
             "trait_type": "face",
-            "value": "face8"
+            "value": "face6"
         },
         {
             "trait_type": "left_eye",
@@ -20,7 +20,7 @@
         },
         {
             "trait_type": "mouth",
-            "value": "mouth4"
+            "value": "mouth1"
         },
         {
             "trait_type": "right_eye",

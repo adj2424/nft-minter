@@ -1,10 +1,10 @@
 {
     "name": "smiley face #39",
     "description": "starter smiley face",
-    "image": "ipfs://bafybeieourdi7wzsc6g357ekbxe3fhw3mfg4uzgjzidwchxv2e54vi5luq/39.png",
-    "dna": "def86c85aec24739bb534924c773c3f4cf8a8fc2",
+    "image": "ipfs://bafybeiez5abohaxwpnzgdfub5keayojbfpx7wwr7nsaqef7aqe6pilf63y/39.png",
+    "dna": "00ac323ef4ded4e49c9ac08922ef348613141771",
     "edition": 39,
-    "date": 1680387711576,
+    "date": 1680497954459,
     "attributes": [
         {
             "trait_type": "background",
@@ -12,19 +12,19 @@
         },
         {
             "trait_type": "face",
-            "value": "face3"
+            "value": "face4"
         },
         {
             "trait_type": "left_eye",
-            "value": "left2"
+            "value": "left1"
         },
         {
             "trait_type": "mouth",
-            "value": "mouth1"
+            "value": "mouth4"
         },
         {
             "trait_type": "right_eye",
-            "value": "right6"
+            "value": "right4"
         }
     ],
     "compiler": "HashLips Art Engine"
