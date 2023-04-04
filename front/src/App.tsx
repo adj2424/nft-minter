@@ -1,14 +1,44 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import Display from './Display';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ethers } from 'ethers';
+import getContract from './utils/contract';
 
 function App() {
+	const [mintedCount, setMintedCount] = useState(0);
+	const contract = getContract()!;
+
+	const count = async () => {
+		let count = await contract.getMintedCount();
+		count = ethers.BigNumber.from(count).toNumber();
+		setMintedCount(count);
+	};
+
+	const view = async () => {
+		const tokens = await contract.getTokens();
+		console.log(tokens);
+	};
+
+	useEffect(() => {
+		count();
+	}, []);
+
 	return (
 		<div className="App">
-			hi
-			<ConnectButton />
+			<div className="header-container">
+				<div className="collection-name">
+					<p>Collection: Smiley Faces</p>
+				</div>
+				<ConnectButton />
+			</div>
+			<div className="collection-details">
+				<p>{` ${mintedCount}/100 minted`}</p>
+				<p>0.001 Mint Price</p>
+				<p>Chain Polygon</p>
+			</div>
+
+			<Display mintedCount={mintedCount} setMintedCount={setMintedCount} />
 		</div>
 	);
 }

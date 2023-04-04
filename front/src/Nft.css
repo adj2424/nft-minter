@@ -1,0 +1,26 @@
+.nft {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid red;
+	margin: 10px;
+}
+
+.details {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid blue;
+	justify-content: space-around;
+}
+
+.id {
+	display: flex;
+	justify-content: center;
+	border: 1px solid green;
+}
+
+.mint {
+	display: flex;
+	height: 41px;
+	justify-content: center;
+	border: 1px solid green;
+}
