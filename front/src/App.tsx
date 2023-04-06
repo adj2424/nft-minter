@@ -15,9 +15,8 @@ function App() {
 		setMintedCount(count);
 	};
 
-	const view = async () => {
-		const tokens = await contract.getTokens();
-		console.log(tokens);
+	const withdraw = async () => {
+		await contract.withdraw();
 	};
 
 	useEffect(() => {
@@ -36,8 +35,8 @@ function App() {
 				<p>{` ${mintedCount}/100 minted`}</p>
 				<p>0.001 Mint Price</p>
 				<p>Chain Polygon</p>
+				<button onClick={withdraw}>withdraw</button>
 			</div>
-
 			<Display mintedCount={mintedCount} setMintedCount={setMintedCount} />
 		</div>
 	);

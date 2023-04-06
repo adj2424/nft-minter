@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import getContract from './utils/contract';
 import './Nft.css';
@@ -21,11 +20,11 @@ const Placeholder = ({ mintedCount, setMintedCount }: PlaceholderProps) => {
 	return (
 		<div className="nft">
 			{/* place holder */}
-			<img src={'../place-holder.png'} width="310" height="310" />
-			<div className="content-bar">
-				<div className="mint">
-					<button onClick={mintNFT}>Mint 0.001 eth</button>
-				</div>
+			<img src={'../place-holder.png'} width="330" height="330" />
+			<div className=".details-container ">
+				<button className="place-holder-mint-btn" onClick={mintNFT}>
+					Mint 0.001 matic
+				</button>
 			</div>
 		</div>
 	);

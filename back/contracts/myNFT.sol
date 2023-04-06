@@ -8,7 +8,15 @@ import "@openzeppelin/contracts/access/Ownable.sol"; // check if owner
 contract myNFT is ERC721, ERC721URIStorage, Ownable {
     uint256 private tokenCounter;
 
-    constructor() ERC721("SmileyFace", "SF") {
+    string private cid_meta_data;
+    string private cid_img;
+
+    constructor(
+        string memory metaDataCID,
+        string memory imgCID
+    ) ERC721("SmileyFace", "SF") {
+        cid_meta_data = metaDataCID;
+        cid_img = imgCID;
         tokenCounter = 0;
     }
 
@@ -24,7 +32,7 @@ contract myNFT is ERC721, ERC721URIStorage, Ownable {
 
     // allows any user to be able to mint a token with proper payment
     function payMint(string memory uri) public payable {
-        require(msg.value >= 0.001 ether, "Not enough ETH");
+        require(msg.value >= 0.01 ether, "Not enough ETH");
         // must not be minted already
         require(mintedTokens[uri] == false, "Token URI already minted");
         // add token to user's owned tokens
@@ -78,5 +86,13 @@ contract myNFT is ERC721, ERC721URIStorage, Ownable {
 
     function getTokens() public view returns (string[] memory) {
         return ownedTokens[msg.sender];
+    }
+
+    function getMetaData() public view returns (string memory) {
+        return cid_meta_data;
+    }
+
+    function getImgData() public view returns (string memory) {
+        return cid_img;
     }
 }
