@@ -14,16 +14,28 @@
 .header-container {
 	display: flex;
 	justify-content: space-between;
-	border: 1px solid blue;
+	background-color: #22223b;
+}
+.value {
+	color: #b2b1b9;
+	padding-left: 5px;
+	padding-right: 20px;
 }
 
 .collection-name {
-	border: 1px solid red;
 	text-align: center;
+	color: white;
 	vertical-align: middle;
+	padding-left: 50px;
 }
 
 .collection-details {
 	display: flex;
-	border: 1px solid green;
+	color: white;
+	background-color: #22223b;
+	padding-left: 50px;
+}
+
+.button-group {
+	margin-left: auto;
 }

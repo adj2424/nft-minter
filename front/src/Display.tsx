@@ -7,11 +7,12 @@ import getContract from './utils/contract';
 interface DisplayProps {
 	mintedCount: number;
 	setMintedCount: Function;
+	viewState: string;
 }
 
-const Display = ({ mintedCount, setMintedCount }: DisplayProps) => {
+const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 	const [nfts, setNfts] = useState<number[]>([]);
-	const [viewState, setViewState] = useState('collection');
+	//const [viewState, setViewState] = useState('collection');
 	const contract = getContract()!;
 
 	// shows all minted nft
@@ -50,8 +51,6 @@ const Display = ({ mintedCount, setMintedCount }: DisplayProps) => {
 
 	return (
 		<>
-			<button onClick={() => setViewState('collection')}>show collection</button>
-			<button onClick={() => setViewState('profile')}>show profile</button>
 			<div className="container">
 				{viewState === 'collection' && <Placeholder mintedCount={mintedCount} setMintedCount={setMintedCount} />}
 				{nfts.map((i: number) => {

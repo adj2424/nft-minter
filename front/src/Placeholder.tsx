@@ -10,11 +10,15 @@ interface PlaceholderProps {
 const Placeholder = ({ mintedCount, setMintedCount }: PlaceholderProps) => {
 	const contract = getContract()!;
 	const mintNFT = async () => {
-		const uri = `ipfs://bafybeihcyihxxmlvwgmc35mmw7iarihtm536lsh7x67rg3glhqkaejqcoa/${mintedCount + 1}.json`;
-		console.log(uri);
-		await contract.payMint(uri, { value: ethers.utils.parseEther('.001') });
-		setMintedCount((prev: number) => prev + 1);
-		console.log('minted');
+		try {
+			const uri = `ipfs://bafybeihcyihxxmlvwgmc35mmw7iarihtm536lsh7x67rg3glhqkaejqcoa/${mintedCount + 1}.json`;
+			console.log(uri);
+			await contract.payMint(uri, { value: ethers.utils.parseEther('.001') });
+			setMintedCount((prev: number) => prev + 1);
+			console.log('minted');
+		} catch (e) {
+			alert(e);
+		}
 	};
 
 	return (
@@ -23,7 +27,7 @@ const Placeholder = ({ mintedCount, setMintedCount }: PlaceholderProps) => {
 			<img src={'../place-holder.png'} width="330" height="330" />
 			<div className=".details-container ">
 				<button className="place-holder-mint-btn" onClick={mintNFT}>
-					Mint 0.001 matic
+					Mint 0.01 matic
 				</button>
 			</div>
 		</div>
