@@ -1,29 +1,29 @@
 {
   "name": "Silly Smiles #52",
   "image": "ipfs://NewUriToReplace/52.png",
-  "dna": "3d9063d28637738b153139d7a1f7445e00be5449",
+  "dna": "572ded2860966575254ced6a679a2f076088e2ea",
   "edition": 52,
-  "date": 1681012133468,
+  "date": 1681012590596,
   "attributes": [
     {
       "trait_type": "background",
-      "value": "bg2 "
+      "value": "bg1 "
     },
     {
       "trait_type": "face",
-      "value": "face3"
+      "value": "face5"
     },
     {
       "trait_type": "left_eye",
-      "value": "left2"
+      "value": "left3"
     },
     {
       "trait_type": "mouth",
-      "value": "mouth5"
+      "value": "mouth1"
     },
     {
       "trait_type": "right_eye",
-      "value": "right3"
+      "value": "right2"
     }
   ],
   "compiler": "HashLips Art Engine"

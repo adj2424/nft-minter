@@ -1,9 +1,9 @@
 {
   "name": "Silly Smiles #33",
   "image": "ipfs://NewUriToReplace/33.png",
-  "dna": "7772a0309dc3ad600348f34d7bd770d6ea18b3ba",
+  "dna": "b78763df3c804a1ae00ce253bbb94e3ca7472916",
   "edition": 33,
-  "date": 1681012130582,
+  "date": 1681012587740,
   "attributes": [
     {
       "trait_type": "background",
@@ -11,7 +11,7 @@
     },
     {
       "trait_type": "face",
-      "value": "face6"
+      "value": "face5"
     },
     {
       "trait_type": "left_eye",
@@ -19,7 +19,7 @@
     },
     {
       "trait_type": "mouth",
-      "value": "mouth7"
+      "value": "mouth8"
     },
     {
       "trait_type": "right_eye",

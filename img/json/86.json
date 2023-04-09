@@ -1,9 +1,9 @@
 {
   "name": "Silly Smiles #86",
   "image": "ipfs://NewUriToReplace/86.png",
-  "dna": "50aeafc7bd1831c8522a2e8c13a3763eb92cd7e2",
+  "dna": "2f5f7be3f0fb113878ee944490c720353900eca0",
   "edition": 86,
-  "date": 1681012138619,
+  "date": 1681012595731,
   "attributes": [
     {
       "trait_type": "background",
@@ -11,19 +11,19 @@
     },
     {
       "trait_type": "face",
-      "value": "face4"
+      "value": "face7"
     },
     {
       "trait_type": "left_eye",
-      "value": "left2"
+      "value": "left1"
     },
     {
       "trait_type": "mouth",
-      "value": "mouth2"
+      "value": "mouth8"
     },
     {
       "trait_type": "right_eye",
-      "value": "right1"
+      "value": "right2"
     }
   ],
   "compiler": "HashLips Art Engine"
