@@ -13,7 +13,7 @@ const Placeholder = ({ mintedCount, setMintedCount }: PlaceholderProps) => {
 		try {
 			const uri = `ipfs://bafybeihcyihxxmlvwgmc35mmw7iarihtm536lsh7x67rg3glhqkaejqcoa/${mintedCount + 1}.json`;
 			console.log(uri);
-			await contract.payMint(uri, { value: ethers.utils.parseEther('.001') });
+			await contract.payMint(uri, { value: ethers.utils.parseEther('.01') });
 			setMintedCount((prev: number) => prev + 1);
 			console.log('minted');
 		} catch (e) {

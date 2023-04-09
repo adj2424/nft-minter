@@ -2,7 +2,9 @@ const { ethers } = require('hardhat');
 
 async function main() {
 	const nftFactory = await ethers.getContractFactory('myNFT');
-	const nftContract = await nftFactory.deploy();
+	const metaCID = 'bafybeibgrkgbicri7niahu3gsc4lcspwvctcqvrpjc23cccqq3yi7xodza';
+	const imgCID = 'bafybeihindw3bp6mimufny6bj7csisbbayz76yb7yd3me7bzli5nl2ybxi';
+	const nftContract = await nftFactory.deploy(metaCID, imgCID);
 	await nftContract.deployed();
 	console.log('NFT deployed to:', nftContract.address);
 
@@ -43,6 +45,11 @@ async function main() {
 	// get minted count
 	let count = await nftContract.connect(signer1).getMintedCount();
 	console.log('contract minted count:', count);
+	// get cid
+	const jsonCID = await nftContract.connect(signer1).getMetaData();
+	console.log('metadata cid: ', jsonCID);
+	const img = await nftContract.connect(signer1).getImgData();
+	console.log('img cid: ', img);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
