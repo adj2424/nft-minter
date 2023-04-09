@@ -10,7 +10,7 @@ function App() {
 	const [viewState, setViewState] = useState('collection');
 	const contract = getContract()!;
 
-	const getMintedCount = async () => {
+	const updateMintedCount = async () => {
 		let count = await contract.getMintedCount();
 		count = ethers.BigNumber.from(count).toNumber();
 		setMintedCount(count);
@@ -24,18 +24,21 @@ function App() {
 		}
 	};
 
+	const btnBackground = (state: String) => {
+		return viewState === state ? '#545492' : '#22223b';
+	};
+
 	useEffect(() => {
-		getMintedCount();
+		updateMintedCount();
 	}, []);
 
 	return (
 		<div className="App">
 			<div className="header-container">
-				<div className="collection-name">
-					<h1>Collection: Smiley Faces</h1>
+				<h1 className="collection-name"> Collection: Smiley Faces</h1>
+				<div className="btn-rainbow">
+					<ConnectButton />
 				</div>
-				<button onClick={withdraw}>withdraw</button>
-				<ConnectButton />
 			</div>
 			<div className="collection-details">
 				<p>
@@ -43,21 +46,32 @@ function App() {
 					<span className="value">{`${mintedCount}/100 `}</span>
 				</p>
 				<p>
-					Mint Price<span className="value">0.001 MATIC</span>
+					Mint Price<span className="value">0.01 MATIC</span>
 				</p>
 				<p>
 					Chain<span className="value">Polygon</span>
 				</p>
 				<div className="button-group">
 					<button
+						style={{ backgroundColor: btnBackground('collection') }}
+						className="btn-collection"
 						onClick={() => {
 							setViewState('collection');
-							getMintedCount();
+							updateMintedCount();
 						}}
 					>
-						show collection
+						Collection
 					</button>
-					<button onClick={() => setViewState('profile')}>show profile</button>
+					<button
+						style={{ backgroundColor: btnBackground('profile') }}
+						className="btn-profile"
+						onClick={() => setViewState('profile')}
+					>
+						Profile
+					</button>
+					<button className="btn-withdraw" onClick={withdraw}>
+						Withdraw
+					</button>
 				</div>
 			</div>
 			<Display viewState={viewState} mintedCount={mintedCount} setMintedCount={setMintedCount} />

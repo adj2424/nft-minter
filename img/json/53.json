@@ -1,31 +1,30 @@
 {
-    "name": "smiley face #53",
-    "description": "starter smiley face",
-    "image": "ipfs://bafybeiez5abohaxwpnzgdfub5keayojbfpx7wwr7nsaqef7aqe6pilf63y/53.png",
-    "dna": "131a4d78e9cc7222c0955e5dd3972c3f1afd7a93",
-    "edition": 53,
-    "date": 1680497956541,
-    "attributes": [
-        {
-            "trait_type": "background",
-            "value": "bg1 "
-        },
-        {
-            "trait_type": "face",
-            "value": "face2"
-        },
-        {
-            "trait_type": "left_eye",
-            "value": "left1"
-        },
-        {
-            "trait_type": "mouth",
-            "value": "mouth1"
-        },
-        {
-            "trait_type": "right_eye",
-            "value": "right6"
-        }
-    ],
-    "compiler": "HashLips Art Engine"
+  "name": "Silly Smiles #53",
+  "image": "ipfs://NewUriToReplace/53.png",
+  "dna": "de112bd5a8f4a7a50f026e81823fbfb431dc2d3b",
+  "edition": 53,
+  "date": 1681012133619,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "bg1 "
+    },
+    {
+      "trait_type": "face",
+      "value": "face4"
+    },
+    {
+      "trait_type": "left_eye",
+      "value": "left3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mouth3"
+    },
+    {
+      "trait_type": "right_eye",
+      "value": "right2"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
 }

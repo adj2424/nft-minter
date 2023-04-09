@@ -1,3 +1,8 @@
+@font-face {
+	font-family: Roboto;
+	src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}
+
 .nft {
 	background-color: #22223b;
 	display: flex;
@@ -53,7 +58,8 @@
 }
 
 .title {
-	align-self: center;
+	margin-top: 12px;
+	font-size: 18px;
 }
 
 .options {
@@ -85,4 +91,10 @@
 	transition: 0.2s;
 	transition-timing-function: ease-out;
 	cursor: pointer;
+}
+
+.place-holder-title {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	margin-top: 15px;
 }

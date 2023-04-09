@@ -1,3 +1,21 @@
+@font-face {
+	font-family: Roboto;
+	src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}
+
+button {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	margin: 15px;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
 .App {
 	background-color: #10131f;
 	position: absolute;
@@ -9,12 +27,14 @@
 	width: 100%;
 	overflow: scroll;
 	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
 }
 
 .header-container {
 	display: flex;
 	justify-content: space-between;
 	background-color: #22223b;
+	align-items: baseline;
 }
 .value {
 	color: #b2b1b9;
@@ -26,7 +46,7 @@
 	text-align: center;
 	color: white;
 	vertical-align: middle;
-	padding-left: 50px;
+	margin-left: 50px;
 }
 
 .collection-details {
@@ -34,8 +54,56 @@
 	color: white;
 	background-color: #22223b;
 	padding-left: 50px;
+	align-items: baseline;
+}
+
+.btn-rainbow {
+	margin: 15px;
 }
 
 .button-group {
+	display: flex;
 	margin-left: auto;
+}
+
+.button-group:hover .btn-withdraw,
+.btn-collection,
+.btn-profile {
+	cursor: pointer;
+}
+
+.btn-collection {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	outline: 1px solid #545492;
+	color: white;
+	border: none;
+	padding: 10px;
+	margin: 15px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+.btn-profile {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	outline: 1px solid #545492;
+	color: white;
+	border: none;
+	padding: 10px;
+	margin: 15px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+.btn-withdraw {
+	border-radius: 10px;
+	outline: 1px solid #545492;
+	color: white;
+	border: none;
+	background-color: #545492;
+	padding: 10px;
+	margin: 15px;
+	margin-top: 0px;
+	margin-left: 0px;
 }

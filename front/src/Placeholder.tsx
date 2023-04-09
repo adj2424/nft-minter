@@ -27,7 +27,7 @@ const Placeholder = ({ mintedCount, setMintedCount }: PlaceholderProps) => {
 			<img src={'../place-holder.png'} width="330" height="330" />
 			<div className=".details-container ">
 				<button className="place-holder-mint-btn" onClick={mintNFT}>
-					Mint 0.01 matic
+					<p className="place-holder-title">MINT 0.01 MATIC</p>
 				</button>
 			</div>
 		</div>

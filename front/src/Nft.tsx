@@ -21,16 +21,18 @@ const Nft = ({ id }: NftProps) => {
 					<div className="drop-down-btns">
 						<button
 							onClick={() => {
-								// window.open(
-								// 	`https://ipfs.io/ipfs/bafybeihcyihxxmlvwgmc35mmw7iarihtm536lsh7x67rg3glhqkaejqcoa/${id}.json`
-								// );
+								window.open(
+									`https://ipfs.io/ipfs/bafybeihcyihxxmlvwgmc35mmw7iarihtm536lsh7x67rg3glhqkaejqcoa/${id}.json`
+								);
 							}}
 						>
 							show uri
 						</button>
 						<button
 							onClick={() => {
-								//window.open(`https://ipfs.io/ipfs/bafybeiez5abohaxwpnzgdfub5keayojbfpx7wwr7nsaqef7aqe6pilf63y/${id}.png`);
+								window.open(
+									`https://ipfs.io/ipfs/bafybeiez5abohaxwpnzgdfub5keayojbfpx7wwr7nsaqef7aqe6pilf63y/${id}.png`
+								);
 							}}
 						>
 							enhanced image
@@ -40,7 +42,7 @@ const Nft = ({ id }: NftProps) => {
 			</div>
 
 			<div className="details-container">
-				<h3 className="title">{`SMILEY FACE # ${id}`}</h3>
+				<p className="title">{`SMILEY FACE # ${id}`}</p>
 				<button
 					className="options"
 					onClick={() => {
