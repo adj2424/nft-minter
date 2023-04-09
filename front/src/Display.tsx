@@ -12,7 +12,8 @@ interface DisplayProps {
 
 const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 	const [nfts, setNfts] = useState<number[]>([]);
-	//const [viewState, setViewState] = useState('collection');
+	const [metaDataCID, setMetaDataCID] = useState('');
+	const [imgCID, setImgCID] = useState('');
 	const contract = getContract()!;
 
 	// shows all minted nft
@@ -36,6 +37,16 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 	};
 
 	useEffect(() => {
+		const getCID = async () => {
+			const metaDataCID: string = await contract.getMetaData();
+			const imgCID: string = await contract.getImgData();
+			setMetaDataCID(metaDataCID);
+			setImgCID(imgCID);
+		};
+		getCID();
+	}, []);
+
+	useEffect(() => {
 		// update nfts when new nft is minted
 		if (viewState === 'collection') {
 			setCollection();
@@ -50,15 +61,13 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 	}, [viewState]);
 
 	return (
-		<>
-			<div className="container">
-				{viewState === 'collection' && <Placeholder mintedCount={mintedCount} setMintedCount={setMintedCount} />}
-				{nfts.map((i: number) => {
-					return <Nft key={i} id={i} />;
-				})}
-				{/* place holder nft*/}
-			</div>
-		</>
+		<div className="container">
+			{/* place holder nft*/}
+			{viewState === 'collection' && <Placeholder mintedCount={mintedCount} setMintedCount={setMintedCount} />}
+			{nfts.map((i: number) => {
+				return <Nft key={i} id={i} metaDataCID={metaDataCID} imgCID={imgCID} />;
+			})}
+		</div>
 	);
 };
 

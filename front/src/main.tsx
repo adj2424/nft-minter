@@ -7,10 +7,10 @@ import './index.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, polygonMumbai } from 'wagmi/chains';
+import { polygon, polygonMumbai } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
-const { chains, provider } = configureChains([mainnet, polygon, polygonMumbai], [publicProvider()]);
+const { chains, provider } = configureChains([polygon, polygonMumbai], [publicProvider()]);
 const { connectors } = getDefaultWallets({
 	appName: 'nft-minter',
 	chains

@@ -35,7 +35,7 @@ function App() {
 	return (
 		<div className="App">
 			<div className="header-container">
-				<h1 className="collection-name"> Collection: Smiley Faces</h1>
+				<h1 className="collection-name"> Collection: Silly Smiles</h1>
 				<div className="btn-rainbow">
 					<ConnectButton />
 				</div>
@@ -49,7 +49,7 @@ function App() {
 					Mint Price<span className="value">0.01 MATIC</span>
 				</p>
 				<p>
-					Chain<span className="value">Polygon</span>
+					Blockchain<span className="value">Polygon</span>
 				</p>
 				<div className="button-group">
 					<button
