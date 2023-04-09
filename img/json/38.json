@@ -1,30 +1,30 @@
 {
-  "name": "Silly Smiles #38",
-  "image": "ipfs://NewUriToReplace/38.png",
-  "dna": "a804475446855da42901e51a4f5d6e7953ffe630",
-  "edition": 38,
-  "date": 1681012588488,
-  "attributes": [
-    {
-      "trait_type": "background",
-      "value": "bg2 "
-    },
-    {
-      "trait_type": "face",
-      "value": "face7"
-    },
-    {
-      "trait_type": "left_eye",
-      "value": "left4"
-    },
-    {
-      "trait_type": "mouth",
-      "value": "mouth7"
-    },
-    {
-      "trait_type": "right_eye",
-      "value": "right3"
-    }
-  ],
-  "compiler": "HashLips Art Engine"
+    "name": "Silly Smiles #38",
+    "image": "ipfs://bafybeihindw3bp6mimufny6bj7csisbbayz76yb7yd3me7bzli5nl2ybxi/38.png",
+    "dna": "a804475446855da42901e51a4f5d6e7953ffe630",
+    "edition": 38,
+    "date": 1681012588488,
+    "attributes": [
+        {
+            "trait_type": "background",
+            "value": "bg2 "
+        },
+        {
+            "trait_type": "face",
+            "value": "face7"
+        },
+        {
+            "trait_type": "left_eye",
+            "value": "left4"
+        },
+        {
+            "trait_type": "mouth",
+            "value": "mouth7"
+        },
+        {
+            "trait_type": "right_eye",
+            "value": "right3"
+        }
+    ],
+    "compiler": "HashLips Art Engine"
 }
