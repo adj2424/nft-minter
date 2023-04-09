@@ -1,32 +1,40 @@
 import './Nft.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SlOptionsVertical } from 'react-icons/sl';
 
 interface NftProps {
 	id: number | null;
-	metaDataCID: String;
-	imgCID: String;
+	metaDataCID: string | null;
+	imgCID: string | null;
 }
 
 const Nft = ({ id, metaDataCID, imgCID }: NftProps) => {
 	const [showOptions, setShowOptions] = useState(false);
+	const [metaDataURL, setMetaDataUrl] = useState('../place-holder.png');
+	const [imgURL, setImgUrl] = useState('../place-holder.png');
+
+	useEffect(() => {
+		if (metaDataCID === null || imgCID === null) return;
+		setMetaDataUrl(`https://ipfs.io/ipfs/${metaDataCID}/${id}.json`);
+		setImgUrl(`https://ipfs.io/ipfs/${imgCID}/${id}.png`);
+	}, [metaDataCID, imgCID]);
 
 	return (
 		<div className="nft">
 			<div className="img-container">
-				<img src={`https://ipfs.io/ipfs/${imgCID}/${id}.png`} width="330" height="330" />
+				<img src={imgURL} width="330" height="330" />
 				{showOptions && (
 					<div className="drop-down-btns">
 						<button
 							onClick={() => {
-								window.open(`https://ipfs.io/ipfs/${metaDataCID}/${id}.json`);
+								window.open(metaDataURL);
 							}}
 						>
 							show uri
 						</button>
 						<button
 							onClick={() => {
-								window.open(`https://ipfs.io/ipfs/${imgCID}/${id}.png`);
+								window.open(imgURL);
 							}}
 						>
 							enhanced image

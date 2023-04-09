@@ -22,11 +22,9 @@ const wagmiClient = createClient({
 });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<React.StrictMode>
-		<WagmiConfig client={wagmiClient}>
-			<RainbowKitProvider chains={chains}>
-				<App />
-			</RainbowKitProvider>
-		</WagmiConfig>
-	</React.StrictMode>
+	<WagmiConfig client={wagmiClient}>
+		<RainbowKitProvider chains={chains}>
+			<App />
+		</RainbowKitProvider>
+	</WagmiConfig>
 );

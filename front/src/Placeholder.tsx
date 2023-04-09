@@ -3,21 +3,25 @@ import getContract from './utils/contract';
 import './Nft.css';
 
 interface PlaceholderProps {
+	metaDataCID: string | null;
 	mintedCount: number;
 	setMintedCount: Function;
 }
 
-const Placeholder = ({ mintedCount, setMintedCount }: PlaceholderProps) => {
+const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderProps) => {
 	const contract = getContract()!;
 	const mintNFT = async () => {
 		try {
-			const uri = `ipfs://bafybeihcyihxxmlvwgmc35mmw7iarihtm536lsh7x67rg3glhqkaejqcoa/${mintedCount + 1}.json`;
-			console.log(uri);
+			const uri = `ipfs://${metaDataCID}/${mintedCount + 1}.json`;
 			await contract.payMint(uri, { value: ethers.utils.parseEther('.01') });
 			setMintedCount((prev: number) => prev + 1);
 			console.log('minted');
-		} catch (e) {
-			alert(e);
+		} catch (e: any) {
+			if (e.message.includes('unknown account #0')) {
+				alert('Please connect your wallet to polygon mumbai');
+			} else {
+				alert(e);
+			}
 		}
 	};
 

@@ -19,8 +19,12 @@ function App() {
 	const withdraw = async () => {
 		try {
 			await contract.withdraw();
-		} catch (e) {
-			alert(e);
+		} catch (e: any) {
+			if (e.message.includes('unknown account #0')) {
+				alert('Please connect your wallet to polygon mumbai');
+			} else {
+				alert(e);
+			}
 		}
 	};
 
@@ -49,7 +53,7 @@ function App() {
 					Mint Price<span className="value">0.01 MATIC</span>
 				</p>
 				<p>
-					Blockchain<span className="value">Polygon</span>
+					Blockchain<span className="value">Polygon Mumbai</span>
 				</p>
 				<div className="button-group">
 					<button
