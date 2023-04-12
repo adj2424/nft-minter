@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
-import getContract from './utils/contract';
 import './Nft.css';
+import { getContractSigner } from './utils/contract';
 
 interface PlaceholderProps {
 	metaDataCID: string | null;
@@ -9,19 +9,15 @@ interface PlaceholderProps {
 }
 
 const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderProps) => {
-	const contract = getContract()!;
 	const mintNFT = async () => {
 		try {
+			const contract = await getContractSigner()!;
 			const uri = `ipfs://${metaDataCID}/${mintedCount + 1}.json`;
-			await contract.payMint(uri, { value: ethers.utils.parseEther('.01') });
+			await contract!.payMint(uri, { value: ethers.utils.parseEther('.01') });
 			setMintedCount((prev: number) => prev + 1);
 			console.log('minted');
 		} catch (e: any) {
-			if (e.message.includes('unknown account #0')) {
-				alert('Please connect your wallet to polygon mumbai');
-			} else {
-				alert(e);
-			}
+			alert('Please install MetaMask plugin');
 		}
 	};
 

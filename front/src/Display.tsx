@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Display.css';
 import Nft from './Nft';
 import Placeholder from './Placeholder';
-import getContract from './utils/contract';
+import { getContract } from './utils/contract';
 
 interface DisplayProps {
 	mintedCount: number;
@@ -58,7 +58,7 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 			setImgCID(newImgCID);
 		};
 		getCID();
-	}, []);
+	}, [contract]);
 
 	return (
 		<div className="container">

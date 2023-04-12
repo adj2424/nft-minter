@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Display from './Display';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from 'ethers';
-import getContract from './utils/contract';
+import { getContract, getContractSigner } from './utils/contract';
 
 function App() {
 	const [mintedCount, setMintedCount] = useState(0);
@@ -18,13 +18,10 @@ function App() {
 
 	const withdraw = async () => {
 		try {
-			await contract.withdraw();
+			const signer = await getContractSigner()!;
+			await signer!.withdraw();
 		} catch (e: any) {
-			if (e.message.includes('unknown account #0')) {
-				alert('Please connect your wallet to polygon mumbai');
-			} else {
-				alert(e);
-			}
+			alert('Please install plugin');
 		}
 	};
 
