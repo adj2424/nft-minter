@@ -1,13 +1,16 @@
-# Sample Hardhat Project
+# Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Smart Contract for minting and ownership of non fungible tokens using the ERC721 standard. Created with Solidity, Hardhat, and OpenZeppelin. The contract is currently deployed on the Polygon Mumbai Testnet with Alchemy as the node provider.
 
 Try running some of the following tasks:
 
 ```shell
 npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+npx hardhat run test/myNFT.js
+```
+
+To deploy this contract to the Polygon Mumbai Network, run:
+
+```shell
+npx hardhat run scripts/deploy.js --network mumbai
 ```
