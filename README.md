@@ -5,12 +5,19 @@ Web application that allows users to mint and own non-fungible tokens (NFTs) in 
 ## Technologies/Frameworks Used
 
 Polygon: Layer 2 Ethereum blockchain
+<br />
 Solidity: Smart contract programming language
+<br />
 Hardhat: Ethereum development environment for smart contracts
+<br />
 OpenZeppelin: Smart contract library for ERC standards
+<br />
 IPFS/NFT.Storage: Decentralized storage for NFTs and metadata
+<br />
 Alchemy: Node Provider for Polygon
+<br />
 MetaMask: Crypto wallet for web3 and dApp transactions
+<br />
 Frontend: Ethers.js and React for user interface
 
 ## Getting Started
@@ -18,7 +25,7 @@ Frontend: Ethers.js and React for user interface
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-1. Change directory to client in terminal one
+1. Change directory to front in terminal
    ```sh
    cd front
    ```
