@@ -95,4 +95,8 @@ contract myNFT is ERC721, ERC721URIStorage, Ownable {
     function getImgData() public view returns (string memory) {
         return cid_img;
     }
+
+    function getOwnerOf(uint256 tokenId) public view returns (address) {
+        return ownerOf(tokenId);
+    }
 }

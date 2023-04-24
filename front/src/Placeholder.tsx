@@ -17,7 +17,13 @@ const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderPr
 			setMintedCount((prev: number) => prev + 1);
 			console.log('minted');
 		} catch (e: any) {
-			alert('Please install MetaMask plugin');
+			if (e.code === 4001) {
+				return;
+			}
+			if (e.message.includes('missing provider')) {
+				return alert('Please install MetaMask plugin');
+			}
+			return alert(e);
 		}
 	};
 

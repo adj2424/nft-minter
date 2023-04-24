@@ -21,7 +21,13 @@ function App() {
 			const signer = await getContractSigner()!;
 			await signer!.withdraw();
 		} catch (e: any) {
-			alert('Please install plugin');
+			if (e.code === 4001) {
+				return;
+			}
+			if (e.message.includes('missing provider')) {
+				return alert('Please install MetaMask plugin');
+			}
+			return alert(e);
 		}
 	};
 
@@ -66,7 +72,20 @@ function App() {
 					<button
 						style={{ backgroundColor: btnBackground('profile') }}
 						className="btn-profile"
-						onClick={() => setViewState('profile')}
+						onClick={async () => {
+							try {
+								await getContractSigner()!;
+								setViewState('profile');
+							} catch (e: any) {
+								if (e.code === 4001) {
+									return;
+								}
+								if (e.message.includes('missing provider')) {
+									return alert('Please install MetaMask plugin');
+								}
+								return alert(e);
+							}
+						}}
 					>
 						Profile
 					</button>

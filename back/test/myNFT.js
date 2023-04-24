@@ -50,6 +50,11 @@ async function main() {
 	console.log('metadata cid: ', jsonCID);
 	const img = await nftContract.connect(signer1).getImgData();
 	console.log('img cid: ', img);
+
+	// check who owns the NFT
+	const ad = await nftContract.connect(signer1).ownerOf(0);
+	console.log(signer1.address, signer2.address);
+	console.log('nft owner address', ad);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
