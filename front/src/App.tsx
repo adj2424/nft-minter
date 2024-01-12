@@ -42,58 +42,63 @@ function App() {
 	return (
 		<div className="App">
 			<div className="header-container">
-				<h1 className="collection-name"> Collection: Silly Smiles</h1>
-				<div className="btn-rainbow">
-					<ConnectButton />
+				<div className="row1">
+					<div className="collection-name"> Collection: Silly Smiles</div>
+					<div className="btn-rainbow">
+						<ConnectButton />
+					</div>
+				</div>
+				<div className="row2">
+					<div className="collection-details">
+						<div>
+							Minted
+							<span className="value">{`${mintedCount}/100 `}</span>
+						</div>
+						<div>
+							Mint Price<span className="value">0.01 MATIC</span>
+						</div>
+						<div>
+							Blockchain<span className="value">Polygon Mumbai</span>
+						</div>
+					</div>
+					<div className="button-group">
+						<button
+							style={{ backgroundColor: btnBackground('collection') }}
+							className="btn-collection"
+							onClick={() => {
+								setViewState('collection');
+								updateMintedCount();
+							}}
+						>
+							Collection
+						</button>
+						<button
+							style={{ backgroundColor: btnBackground('profile') }}
+							className="btn-profile"
+							onClick={async () => {
+								try {
+									await getContractSigner()!;
+									setViewState('profile');
+								} catch (e: any) {
+									if (e.code === 4001) {
+										return;
+									}
+									if (e.message.includes('missing provider')) {
+										return alert('Please install MetaMask plugin');
+									}
+									return alert(e);
+								}
+							}}
+						>
+							Profile
+						</button>
+						<button className="btn-withdraw" onClick={withdraw}>
+							Withdraw
+						</button>
+					</div>
 				</div>
 			</div>
-			<div className="collection-details">
-				<p>
-					Minted
-					<span className="value">{`${mintedCount}/100 `}</span>
-				</p>
-				<p>
-					Mint Price<span className="value">0.01 MATIC</span>
-				</p>
-				<p>
-					Blockchain<span className="value">Polygon Mumbai</span>
-				</p>
-				<div className="button-group">
-					<button
-						style={{ backgroundColor: btnBackground('collection') }}
-						className="btn-collection"
-						onClick={() => {
-							setViewState('collection');
-							updateMintedCount();
-						}}
-					>
-						Collection
-					</button>
-					<button
-						style={{ backgroundColor: btnBackground('profile') }}
-						className="btn-profile"
-						onClick={async () => {
-							try {
-								await getContractSigner()!;
-								setViewState('profile');
-							} catch (e: any) {
-								if (e.code === 4001) {
-									return;
-								}
-								if (e.message.includes('missing provider')) {
-									return alert('Please install MetaMask plugin');
-								}
-								return alert(e);
-							}
-						}}
-					>
-						Profile
-					</button>
-					<button className="btn-withdraw" onClick={withdraw}>
-						Withdraw
-					</button>
-				</div>
-			</div>
+
 			<Display viewState={viewState} mintedCount={mintedCount} setMintedCount={setMintedCount} />
 		</div>
 	);
