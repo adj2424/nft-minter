@@ -76,9 +76,10 @@ p {
 	flex-wrap: wrap;
 }
 
-.button-group:hover .btn-withdraw,
 .btn-collection,
-.btn-profile {
+.btn-profile,
+.btn-about,
+.btn-withdraw {
 	cursor: pointer;
 }
 
@@ -92,6 +93,13 @@ p {
 }
 
 .btn-profile {
+	outline: 1px solid #545492;
+	color: white;
+	border: none;
+	padding: 10px;
+}
+
+.btn-about {
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	outline: 1px solid #545492;

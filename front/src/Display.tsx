@@ -17,7 +17,7 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 	const contract = getContract()!;
 
 	// shows all minted nft
-	const setCollection = async () => {
+	const setCollection = () => {
 		let temp: any = [];
 		for (let i = 0; i < mintedCount; i++) {
 			temp = [...temp, i + 1];
@@ -45,7 +45,17 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 
 	useEffect(() => {
 		const updateNFTs = async () => {
-			viewState === 'collection' ? setCollection() : await setProfile();
+			switch (viewState) {
+				case 'collection':
+					setCollection();
+					break;
+				case 'profile':
+					await setProfile();
+					break;
+				case 'about':
+					setNfts([]);
+					break;
+			}
 		};
 		updateNFTs();
 	}, [viewState]);
@@ -69,6 +79,19 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 			{nfts.map((i: number) => {
 				return <Nft key={i} id={i} metaDataCID={metaDataCID} imgCID={imgCID} />;
 			})}
+
+			{viewState === 'about' && (
+				<div className="test">
+					<div>hi123</div>
+					<div>hi123</div>
+					<div>hi123</div>
+					<div>hi123</div>
+					<div>hi123</div>
+					<div>hi123</div>
+					<div>hi123</div>
+					<div>hi123</div>
+				</div>
+			)}
 		</div>
 	);
 };

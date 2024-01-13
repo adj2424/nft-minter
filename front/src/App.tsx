@@ -92,6 +92,15 @@ function App() {
 						>
 							Profile
 						</button>
+						<button
+							style={{ backgroundColor: btnBackground('about') }}
+							className="btn-about"
+							onClick={() => {
+								setViewState('about');
+							}}
+						>
+							About
+						</button>
 						<button className="btn-withdraw" onClick={withdraw}>
 							Withdraw
 						</button>
