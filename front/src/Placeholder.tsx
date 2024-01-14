@@ -31,7 +31,7 @@ const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderPr
 		<div className="nft">
 			{/* place holder */}
 			<img src={'../place-holder.png'} width="330" height="330" />
-			<div className=".details-container ">
+			<div>
 				<button className="place-holder-mint-btn" onClick={mintNFT}>
 					<p className="place-holder-title">MINT 0.01 MATIC</p>
 				</button>

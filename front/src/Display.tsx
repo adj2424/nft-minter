@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import './Display.css';
 import Nft from './Nft';
 import Placeholder from './Placeholder';
-import { getContract } from './utils/contract';
+import About from './About';
+import { getContract, getContractSigner } from './utils/contract';
 
 interface DisplayProps {
 	mintedCount: number;
@@ -28,7 +29,8 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 	// shows owned nft
 	const setProfile = async () => {
 		let temp: any = [];
-		const tokens = await contract.getTokens();
+		const connectedContract = await getContractSigner()!;
+		const tokens = await connectedContract.getTokens();
 		tokens.map((str: string) => {
 			const nftID = Number(str.substring(str.lastIndexOf('/') + 1, str.lastIndexOf('.json')));
 			temp = [...temp, nftID];
@@ -80,18 +82,7 @@ const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
 				return <Nft key={i} id={i} metaDataCID={metaDataCID} imgCID={imgCID} />;
 			})}
 
-			{viewState === 'about' && (
-				<div className="test">
-					<div>hi123</div>
-					<div>hi123</div>
-					<div>hi123</div>
-					<div>hi123</div>
-					<div>hi123</div>
-					<div>hi123</div>
-					<div>hi123</div>
-					<div>hi123</div>
-				</div>
-			)}
+			{viewState === 'about' && <About></About>}
 		</div>
 	);
 };

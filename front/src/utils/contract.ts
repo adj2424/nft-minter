@@ -15,7 +15,7 @@ export const getContract = () => {
 // get contract with metamask signer
 // singer needed for transactions
 export const getContractSigner = async () => {
-	const { ethereum } = window;
+	const { ethereum } = window as any;
 	const provider = new ethers.providers.Web3Provider(ethereum as ethers.providers.ExternalProvider);
 	// ask metamask to connect
 	await provider.send('eth_requestAccounts', []);
