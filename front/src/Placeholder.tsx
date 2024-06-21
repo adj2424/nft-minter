@@ -13,7 +13,6 @@ const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderPr
 		try {
 			const contract = await getContractSigner()!;
 			const uri = `https://${metaDataCID}.ipfs.nftstorage.link/${mintedCount + 1}.json`;
-			// const uri = `ipfs://${metaDataCID}/${mintedCount + 1}.json`;
 			await contract!.payMint(uri, { value: ethers.utils.parseEther('.01') });
 			setMintedCount((prev: number) => prev + 1);
 			console.log('minted');

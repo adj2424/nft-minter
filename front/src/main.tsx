@@ -4,12 +4,12 @@ import App from './App';
 import './index.css';
 
 import '@rainbow-me/rainbowkit/styles.css';
+import { RainbowKitProvider, getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider, http } from 'wagmi';
-import { RainbowKitProvider, getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { mainnet, polygon, polygonMumbai, polygonAmoy } from 'wagmi/chains';
 
-const config = getDefaultConfig({
+const wagmiConfig = getDefaultConfig({
 	appName: 'nft-minter',
 	projectId: 'caaca4439d1b1c065e96ad12b4328020',
 	chains: [mainnet, polygon, polygonMumbai, polygonAmoy],
@@ -24,7 +24,7 @@ const config = getDefaultConfig({
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<WagmiProvider config={config}>
+	<WagmiProvider config={wagmiConfig}>
 		<QueryClientProvider client={queryClient}>
 			<RainbowKitProvider>
 				<App />
