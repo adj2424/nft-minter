@@ -12,7 +12,8 @@ const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderPr
 	const mintNFT = async () => {
 		try {
 			const contract = await getContractSigner()!;
-			const uri = `ipfs://${metaDataCID}/${mintedCount + 1}.json`;
+			const uri = `https://${metaDataCID}.ipfs.nftstorage.link/${mintedCount + 1}.json`;
+			// const uri = `ipfs://${metaDataCID}/${mintedCount + 1}.json`;
 			await contract!.payMint(uri, { value: ethers.utils.parseEther('.01') });
 			setMintedCount((prev: number) => prev + 1);
 			console.log('minted');
@@ -23,7 +24,7 @@ const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderPr
 			if (e.message.includes('missing provider')) {
 				return alert('Please install MetaMask plugin');
 			}
-			return alert(e);
+			return alert(JSON.stringify(e));
 		}
 	};
 

@@ -4,31 +4,31 @@ import App from './App';
 import './index.css';
 
 import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, polygonMumbai } from 'wagmi/chains';
-import { publicProvider } from 'wagmi/providers/public';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { WagmiProvider, http } from 'wagmi';
+import { RainbowKitProvider, getDefaultConfig } from '@rainbow-me/rainbowkit';
+import { mainnet, polygon, polygonMumbai, polygonAmoy } from 'wagmi/chains';
 
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-	[mainnet, polygon, polygonMumbai],
-	[publicProvider()]
-);
-const { connectors } = getDefaultWallets({
+const config = getDefaultConfig({
 	appName: 'nft-minter',
 	projectId: 'caaca4439d1b1c065e96ad12b4328020',
-	chains
-});
-const wagmiConfig = createConfig({
-	autoConnect: true,
-	connectors,
-	publicClient,
-	webSocketPublicClient
+	chains: [mainnet, polygon, polygonMumbai, polygonAmoy],
+	transports: {
+		[mainnet.id]: http(),
+		[polygon.id]: http(),
+		[polygonMumbai.id]: http(),
+		[polygonAmoy.id]: http()
+	}
 });
 
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<WagmiConfig config={wagmiConfig}>
-		<RainbowKitProvider chains={chains}>
-			<App />
-		</RainbowKitProvider>
-	</WagmiConfig>
+	<WagmiProvider config={config}>
+		<QueryClientProvider client={queryClient}>
+			<RainbowKitProvider>
+				<App />
+			</RainbowKitProvider>
+		</QueryClientProvider>
+	</WagmiProvider>
 );

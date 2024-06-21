@@ -123,7 +123,7 @@ const About = () => {
 							className="card-btn"
 							onClick={() => {
 								window.open(
-									'https://mumbai.polygonscan.com/address/0x35437925f7158b0c2102b87d378326264ab178c1',
+									'https://amoy.polygonscan.com/address/0x21D3F8ab8421eDAECe415Af16586eb76CB549733',
 									'_blank'
 								);
 							}}

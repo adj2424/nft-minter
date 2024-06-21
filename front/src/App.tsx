@@ -27,7 +27,7 @@ function App() {
 			if (e.message.includes('missing provider')) {
 				return alert('Please install MetaMask plugin');
 			}
-			return alert(e);
+			return alert(JSON.stringify(e));
 		}
 	};
 
@@ -58,7 +58,7 @@ function App() {
 							Mint Price<span className="value">0.01 MATIC</span>
 						</div>
 						<div>
-							Blockchain<span className="value">Polygon Mumbai</span>
+							Blockchain<span className="value">Polygon Amoy</span>
 						</div>
 					</div>
 					<div className="button-group">
@@ -86,7 +86,7 @@ function App() {
 									if (e.message.includes('missing provider')) {
 										return alert('Please install MetaMask plugin');
 									}
-									return alert(e);
+									return alert(JSON.stringify(e));
 								}
 							}}
 						>

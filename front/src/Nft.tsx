@@ -15,8 +15,11 @@ const Nft = ({ id, metaDataCID, imgCID }: NftProps) => {
 
 	useEffect(() => {
 		if (metaDataCID === null || imgCID === null) return;
-		setMetaDataUrl(`https://ipfs.io/ipfs/${metaDataCID}/${id}.json`);
-		setImgUrl(`https://ipfs.io/ipfs/${imgCID}/${id}.png`);
+		//bafybeihindw3bp6mimufny6bj7csisbbayz76yb7yd3me7bzli5nl2ybxi.ipfs.nftstorage.link/1.png
+		// setMetaDataUrl(`https://ipfs.io/ipfs/${metaDataCID}/${id}.json`);
+		// setImgUrl(`https://ipfs.io/ipfs/${imgCID}/${id}.png`);
+		setMetaDataUrl(`https://${metaDataCID}.ipfs.nftstorage.link/${id}.json`);
+		setImgUrl(`https://${imgCID}.ipfs.nftstorage.link/${id}.png`);
 	}, [metaDataCID, imgCID]);
 
 	return (
@@ -50,7 +53,6 @@ const Nft = ({ id, metaDataCID, imgCID }: NftProps) => {
 				<button
 					className="options"
 					onClick={() => {
-						console.log('hi');
 						setShowOptions(prev => !prev);
 					}}
 				>

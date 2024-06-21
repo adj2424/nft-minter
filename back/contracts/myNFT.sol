@@ -14,7 +14,7 @@ contract myNFT is ERC721, ERC721URIStorage, Ownable {
     constructor(
         string memory metaDataCID,
         string memory imgCID
-    ) ERC721("SmileyFace", "SF") {
+    ) ERC721("Silly Smiles", "SS") {
         cid_meta_data = metaDataCID;
         cid_img = imgCID;
         tokenCounter = 0;
