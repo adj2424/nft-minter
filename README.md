@@ -1,6 +1,6 @@
 # NFT Minting dApp
 
-Web application that allows users to mint and own non-fungible tokens (NFTs) in the Silly Smiles collection using the ERC721 standard on the Polygon blockchain. Users can view, organize, and mint unique Silly Smiles NFTs. NFT layers designed with Figma and generated with [HashLips Art Engine.](https://github.com/HashLips/hashlips_art_engine) View the live website [here](https://nft-minter-polygon.vercel.app/) and the contract deployment [here.](https://mumbai.polygonscan.com/address/0x35437925f7158b0c2102b87d378326264ab178c1)
+Web application that allows users to mint and own non-fungible tokens (NFTs) in the Silly Smiles collection using the ERC721 standard on the Polygon blockchain. Users can view, organize, and mint unique Silly Smiles NFTs. NFT layers designed with Figma and generated with [HashLips Art Engine.](https://github.com/HashLips/hashlips_art_engine) View the live website [here](https://nft-minter-polygon.vercel.app/) and the contract deployment [here.](https://amoy.polygonscan.com/address/0x21D3F8ab8421eDAECe415Af16586eb76CB549733)
 
 ## Technologies/Frameworks Used
 
