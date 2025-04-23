@@ -14,18 +14,18 @@ const { ethers } = require('hardhat');
  */
 
 async function main() {
-	const nftFactory = await ethers.getContractFactory('myNFT');
-	const metaCID = 'bafybeibgrkgbicri7niahu3gsc4lcspwvctcqvrpjc23cccqq3yi7xodza';
-	const imgCID = 'bafybeihindw3bp6mimufny6bj7csisbbayz76yb7yd3me7bzli5nl2ybxi';
-	const nftContract = await nftFactory.deploy(metaCID, imgCID);
-	await nftContract.deployed();
-	console.log('NFT deployed to:', nftContract.address);
+  const nftFactory = await ethers.getContractFactory('myNFT');
+  const metaCID = 'bafybeibgrkgbicri7niahu3gsc4lcspwvctcqvrpjc23cccqq3yi7xodza';
+  const imgCID = 'bafybeihindw3bp6mimufny6bj7csisbbayz76yb7yd3me7bzli5nl2ybxi';
+  const nftContract = await nftFactory.deploy(metaCID, imgCID);
+  await nftContract.deployed();
+  console.log('NFT deployed to:', nftContract.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main().catch(error => {
-	console.error(error);
-	process.exitCode = 1;
+  console.error(error);
+  process.exitCode = 1;
 });
 
