@@ -13,10 +13,8 @@ interface DisplayProps {
 
 const Display = ({ mintedCount, setMintedCount, viewState }: DisplayProps) => {
   const [nfts, setNfts] = useState<number[]>([]);
-  const [metaDataCID, setMetaDataCID] = useState<string | null>(
-    'bafybeibgrkgbicri7niahu3gsc4lcspwvctcqvrpjc23cccqq3yi7xodza'
-  );
-  const [imgCID, setImgCID] = useState<string | null>('bafybeihindw3bp6mimufny6bj7csisbbayz76yb7yd3me7bzli5nl2ybxi');
+  const [metaDataCID, setMetaDataCID] = useState<string | null>(null);
+  const [imgCID, setImgCID] = useState<string | null>(null);
   const contract = getContract()!;
 
   // shows all minted nft

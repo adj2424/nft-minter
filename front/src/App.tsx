@@ -2,17 +2,16 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Display from './Display';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { ethers } from 'ethers';
 import { getContract, getContractSigner } from './utils/contract';
 
 function App() {
-  const [mintedCount, setMintedCount] = useState(10);
+  const [mintedCount, setMintedCount] = useState(0);
   const [viewState, setViewState] = useState('collection');
   const contract = getContract()!;
 
   const updateMintedCount = async () => {
     let count = await contract.getMintedCount();
-    count = ethers.BigNumber.from(count).toNumber();
+    count = Number(count);
     setMintedCount(count);
   };
 
@@ -107,7 +106,6 @@ function App() {
           </div>
         </div>
       </div>
-
       <Display viewState={viewState} mintedCount={mintedCount} setMintedCount={setMintedCount} />
     </div>
   );

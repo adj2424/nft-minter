@@ -1,4 +1,4 @@
-import { ethers } from 'ethers';
+import { parseEther } from 'ethers';
 import './Nft.css';
 import { getContractSigner } from './utils/contract';
 
@@ -13,7 +13,7 @@ const Placeholder = ({ metaDataCID, mintedCount, setMintedCount }: PlaceholderPr
     try {
       const contract = await getContractSigner()!;
       const uri = `https://${metaDataCID}.ipfs.nftstorage.link/${mintedCount + 1}.json`;
-      await contract!.payMint(uri, { value: ethers.utils.parseEther('.01') });
+      await contract!.payMint(uri, { value: parseEther('.01') });
       setMintedCount((prev: number) => prev + 1);
       console.log('minted');
     } catch (e: any) {
